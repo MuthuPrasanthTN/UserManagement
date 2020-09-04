@@ -1,0 +1,57 @@
+<div class="container custom-container-2">
+
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="User.length == 0">
+      <p>There is no user added yet!</p>
+       <button class="btn btn-outline-primary" routerLink="/user-create"><i class='fas fa-user-plus'>New User</i> </button>
+    </div>
+  
+    <!-- Employees list table, it hides when there is no employee -->
+    <div *ngIf="User.length !== 0">
+      <h3 class="mb-3 text-center">User List</h3>
+        <button type="button" class="btn1" [routerLink]="[ '/user-create']"><i class='fas fa-user-plus'>New User</i></button>
+         <br><br>
+    
+         <div class="form-group col-md-4">
+          <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="firstname">
+        </div>
+        
+
+      
+        
+      <div class="col-md-12">
+        
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">User Id</th>
+              <th scope="col">UserName</th>
+              <th scope="col">Email</th>
+              <th scope="col">Firstname</th>
+              <th scope="col">Lastname</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Active</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of User | filter:firstname">
+              <td>{{user.id}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.firstname}}</td>
+              <td>{{user.lastname}}</td>
+              <td>{{user.phone}}</td>
+              <td>{{user.active}}</td>
+              <td>
+                <button class="edit" routerLink="/user-edit/{{user.id}}"><i class="fa fa-edit"></i></button>
+                <button class="delete" (click)="deleteUser(user.id)"><i class="fa fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>

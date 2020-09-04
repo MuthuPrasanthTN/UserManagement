@@ -1,0 +1,39 @@
+<div class="container custom-container">
+    <div class="col-md-8">
+      
+      <h4 class="text-center">Edit Patient</h4>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="patientData.firstname" class="form-control" placeholder="firstname">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="patientData.dob" class="form-control" placeholder="dob">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="patientData.lastname" class="form-control" placeholder="lastname">
+      </div>
+      
+      <div class="form-group">
+        <input type="text" [(ngModel)]="patientData.phone" class="form-control" placeholder="phone">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="patientData.email" class="form-control" placeholder="email">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="patientData.address" class="form-control" placeholder="address">
+      </div>
+      
+      <div class="form-group">
+        <input type="text" [(ngModel)]="patientData.sex" class="form-control" placeholder="sex">
+      </div>
+      
+      <div class="form-group">
+        <button class="btn1" (click)="updatePatient()">Submit</button>
+      </div>
+      
+    </div>
+  </div>
+
+

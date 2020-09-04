@@ -1,0 +1,32 @@
+<div class="container custom-container">
+    <div class="col-md-8">
+      
+      <h4 class="text-center">Edit User</h4>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="userData.firstname" class="form-control" placeholder="firstname">
+      </div>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="userData.username" class="form-control" placeholder="username">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="userData.lastname" class="form-control" placeholder="lastname">
+      </div>
+      
+      <div class="form-group">
+        <input type="text" [(ngModel)]="userData.phone" class="form-control" placeholder="phone">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="userData.email" class="form-control" placeholder="email">
+      </div>
+  
+      
+    
+  
+      <div class="form-group">
+        <button class="btn1" (click)="updateUser()">Submit</button>
+      </div>
+      
+    </div>
+  </div>

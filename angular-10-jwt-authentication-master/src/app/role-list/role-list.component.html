@@ -1,0 +1,37 @@
+<div class="container custom-container-2">
+
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Role.length == 0">
+      <p>There is no role added yet!</p>
+     
+    </div>
+  
+    <!-- Employees list table, it hides when there is no employee -->
+    <div *ngIf="Role.length !== 0">
+      <h4 class="text-center">Role List</h4>
+      
+      <div class="col-md-8">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">User Id</th>
+              <th scope="col">UserName</th>
+             
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let role of Role">
+              <td>{{role.id}}</td>
+              <td>{{role.name}}</td>
+             
+              
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>

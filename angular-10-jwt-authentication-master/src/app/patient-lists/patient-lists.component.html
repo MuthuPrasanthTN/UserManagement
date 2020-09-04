@@ -1,0 +1,49 @@
+<div class="container custom-container-2">
+
+    <!-- Show it when there is no employee -->
+    <div class="no-data text-center" *ngIf="Patient.length == 0">
+      <p>There is no patient added yet!</p>
+    
+    </div>
+  
+    <!-- Employees list table, it hides when there is no employee -->
+    <div *ngIf="Patient.length !== 0">
+      <h4 class="text-center">Patients List</h4>
+      <div class="form-group col-md-4">
+        <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="firstname">
+      </div>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">User Id</th>
+              <th scope="col">FirstName</th>
+              <th scope="col">FirstName</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Date Of Birth</th>
+              <th scope="col">Address</th>
+              <th scope="col">Sex</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let patient of Patient | filter:firstname">
+              <td>{{patient.id}}</td>
+              <td>{{patient.firstname}}</td>
+              <td>{{patient.lastname}}</td>
+              <td>{{patient.email}}</td>
+              <td>{{patient.phone}}</td>
+              <td>{{patient.dob}}</td>
+              <td>{{patient.address}}</td>
+              <td>{{patient.sex}}</td>
+             
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>
+
